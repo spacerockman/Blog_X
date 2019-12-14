@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.tycoding.mapper.IndexBarMapper">
+
+    <!-- resultMap用于实现映射结果集 -->
+    <resultMap id="BaseResultMap" type="cn.tycoding.pojo.IndexBar">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="listname" property="listName" jdbcType="VARCHAR"/>
+        <result column="auth" property="auth" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!-- 查询bar信息的方法 -->
+    <select id="selectBar" resultType="IndexBar">
+        select * from tb_indexbar
+    </select>
+
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.tycoding.mapper.QuestionMapper">
+
+    <!-- resultMap用于实现映射结果集 -->
+    <resultMap id="BaseResultMap" type="cn.tycoding.pojo.Question">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="question" property="question" jdbcType="VARCHAR"/>
+        <result  column="create_time" property="createTime" />
+        <result column="answer" property="answer" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 查询question信息的方法 -->
+    <select id="selectQuestion" resultType="Question">
+        select * from tb_question
+    </select>
+
+</mapper>
