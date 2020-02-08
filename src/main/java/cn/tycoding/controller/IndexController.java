@@ -1,8 +1,10 @@
 package cn.tycoding.controller;
 
 import cn.tycoding.pojo.IndexBar;
+import cn.tycoding.pojo.Japan;
 import cn.tycoding.pojo.Question;
 import cn.tycoding.service.IndexService;
+import cn.tycoding.service.JapanSecondTitlesService;
 import cn.tycoding.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,14 +23,19 @@ public class IndexController {
 
     @Autowired
     private QuestionService questionService;
+
+    @Autowired
+    private JapanSecondTitlesService japanSecondTitlesService;
+
     //查询bar
     @RequestMapping(value = "/home")
     public String selectBar(Model model){
         List<IndexBar> indexBars = indexService.selectBar();
         List<Question> questions = questionService.selectQuestion();
-//        System.out.println(questions.get(1).getTitle()+"ahaahahhahhhahahahahahhahahahahahahaha");
+        List<Japan> jTitles = japanSecondTitlesService.selectTitles();
         model.addAttribute("indexBars",indexBars);
         model.addAttribute("questions",questions);
+        model.addAttribute("jTitles",jTitles);
         return "index";
     }
 }

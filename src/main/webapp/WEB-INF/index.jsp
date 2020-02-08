@@ -36,20 +36,33 @@
             <a class="navbar-brand" href="#" id="">首页</a>
         </div>
         <div>
-            <ul class="nav navbar-nav">
-                <c:forEach var="i" items="${indexBars}">
-                    <c:choose>
-                        <c:when test="${i.id == 1}">
-                            <li hidden="hidden"></li>
-                        </c:when>
-                        <c:otherwise>
-                            <li class="topbar"><a href="#"><c:out value="${i.listName}"></c:out></a></li>
-                        </c:otherwise>
-                    </c:choose>
-
-                </c:forEach>
-
-            </ul>
+            <c:forEach var="i" items="${indexBars}">
+                <c:choose>
+                    <c:when test="${i.id == 1}">
+                        <li hidden="hidden"></li>
+                    </c:when>
+                    <c:otherwise>
+                        <div class="dropdown">
+                        <button type="button" class="btn dropdown-toggle" id="dropdownMenu1"
+                                data-toggle="dropdown">
+                            <c:out value="${i.listName}"></c:out>
+                            <span class="caret"></span>
+                        </button>
+                        <c:if test="${i.id == 3}">
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <c:forEach var="j" items="${jTitles}">
+                                    <li role="presentation">
+                                        <a role="menuitem" tabindex="-1" href="#">
+                                            <c:out value="${j.title}"></c:out>
+                                        </a>
+                                    </li>
+                                </c:forEach>
+                            </ul>
+                        </c:if>
+                    </div>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
         </div>
     </div>
 </nav>
@@ -124,11 +137,7 @@
         </div>
         <div class="quest-div">
             <c:forEach var="i" items="${questions}">
-               <%-- <c:choose>
-                    <c:when test="">--%>
                         <div class="active"><a href="#"><c:out value="${i.title}"></c:out></a></div>
-               <%--     </c:when>
-                </c:choose>--%>
             </c:forEach>
         </div>
         <div>more</div>
