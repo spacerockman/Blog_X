@@ -14,9 +14,12 @@
     <resultMap id="BaseResultMap" type="cn.tycoding.pojo.Japan">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="urlname" property="urlName" jdbcType="VARCHAR"/>
     </resultMap>
-  <!-- 查询bar信息的方法 -->
+
+  <!-- 查询japan's titles信息的方法 -->
   <select id="selectTitles" resultType="Japan">
-        select title from tb_japan
-   </select>
+        select id,title,urlname from tb_japan
+  </select>
+
 </mapper>

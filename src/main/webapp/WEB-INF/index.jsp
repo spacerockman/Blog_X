@@ -46,10 +46,20 @@
                             </c:if>
                             <c:if test="${i.id > 1}">
                                <li href="#" class="navbar-brand"><c:out value="${i.listName}"></c:out> <b class="caret"></b>
-                                   <ul class="dropdown-menu">
-                                       <c:if test="${i.id == 3}">
+                                   <ul class="dropdown-menu" >
+                                       <c:if test="${i.id == 3}"> <%--id=3的时候为日本的bar--%>
                                            <c:forEach var="j" items="${jTitles}">
-                                               <li><a href="#"> <c:out value="${j.title}"></c:out></a></li>
+                                                <c:choose>
+                                                    <c:when test="${j.id == 1}">
+                                                        <li><a href="<%=basePath%>/japan/${j.urlName}.do"> <c:out value="${j.title}"></c:out></a></li>
+                                                    </c:when>
+                                                    <c:when test="${j.id == 2}">
+                                                        <li><a href="<%=basePath%>/japan/${j.urlName}.do"> <c:out value="${j.title}"></c:out></a></li>
+                                                    </c:when>
+                                                    <c:when test="${j.id == 3}">
+                                                        <li><a href="<%=basePath%>/japan/${j.urlName}.do"> <c:out value="${j.title}"></c:out></a></li>
+                                                    </c:when>
+                                                </c:choose>
                                            </c:forEach>
                                        </c:if>
                                    </ul>

@@ -7,6 +7,16 @@ public class Japan implements Serializable {
 
     private String title;
 
+    private String urlName;
+
+    public String getUrlName() {
+        return urlName;
+    }
+
+    public void setUrlName(String urlName) {
+        this.urlName = urlName;
+    }
+
     public int getId() {
         return id;
     }
