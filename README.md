@@ -4,6 +4,7 @@
 关于SSM框架环境搭建，请点击这里前往我的博客：[SSM框架整合之环境搭建](http://tycoding.cn/2018/06/04/ssm/)
 由于本项目采用了maven，关于IDEA搭建maven项目过程请点击这里前往我的博客：[maven起步](http://tycoding.cn/2018/06/01/maven/)
 
+**如果觉得不错就点击右上角star鼓励一下作者吧！**
 
 # 关于项目
 
@@ -33,7 +34,7 @@
     └── main
         ├── java
         │   └── cn
-        │       └── jtcoding
+        │       └── tycoding
         │           ├── controller  -- SpringMVC-WEB层控制器
         │           ├── mapper  -- Mybatis接口和映射文件。本项目采用了mybatis的接口开发，所以接口和映射文件放在同一目录下，并且名称相同。
         │           ├── pojo  -- JavaBean实体类

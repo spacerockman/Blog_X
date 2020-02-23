@@ -17,6 +17,6 @@
     </resultMap>
   <!-- 查询bar信息的方法 -->
   <select id="selectTitles" resultType="Japan">
-        select * from tb_japan
+        select title from tb_japan
    </select>
 </mapper>

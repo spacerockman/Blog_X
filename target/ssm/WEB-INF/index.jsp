@@ -33,25 +33,33 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#" id="">首页</a>
+            <%--<a class="navbar-brand active" href="#" id="">首页</a>--%>
         </div>
-        <div>
-            <ul class="nav navbar-nav">
+
+       <div>
+            <ul class="nav navbar-nav" id="topbar">
                 <c:forEach var="i" items="${indexBars}">
-                    <c:choose>
-                        <c:when test="${i.id == 1}">
-                            <li hidden="hidden"></li>
-                        </c:when>
-                        <c:otherwise>
-                            <li class="topbar"><a href="#"><c:out value="${i.listName}"></c:out></a></li>
-                        </c:otherwise>
-                    </c:choose>
-
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <c:if test="${i.id == 1}">
+                               <li href="#" class="navbar-brand active"><c:out value="${i.listName}"></c:out> <b class="caret"></b></li>
+                            </c:if>
+                            <c:if test="${i.id > 1}">
+                               <li href="#" class="navbar-brand"><c:out value="${i.listName}"></c:out> <b class="caret"></b>
+                                   <ul class="dropdown-menu">
+                                       <c:if test="${i.id == 3}">
+                                           <c:forEach var="j" items="${jTitles}">
+                                               <li><a href="#"> <c:out value="${j.title}"></c:out></a></li>
+                                           </c:forEach>
+                                       </c:if>
+                                   </ul>
+                               </li>
+                            </c:if>
+                        </a>
+                    </li>
                 </c:forEach>
-
             </ul>
         </div>
-    </div>
 </nav>
 
 <%--轮播信息--%>
@@ -124,11 +132,7 @@
         </div>
         <div class="quest-div">
             <c:forEach var="i" items="${questions}">
-               <%-- <c:choose>
-                    <c:when test="">--%>
                         <div class="active"><a href="#"><c:out value="${i.title}"></c:out></a></div>
-               <%--     </c:when>
-                </c:choose>--%>
             </c:forEach>
         </div>
         <div>more</div>

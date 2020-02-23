@@ -60,6 +60,7 @@
                 </c:forEach>
             </ul>
         </div>
+    </div>
 </nav>
 
 <%--轮播信息--%>
