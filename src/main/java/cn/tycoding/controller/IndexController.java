@@ -31,21 +31,4 @@ public class IndexController {
         model.addAttribute("questions",questions);
         return "index";
     }
-
-    //登录
-    @RequestMapping(value = "/loginPage")
-    public String getLoginPage(){
-
-        return "backside/login";
-    }
-
-    @RequestMapping(value = "/loginAfter")
-    public String loginAfter(Model model){
-        List<IndexBar> indexBars = indexService.selectBar();
-        List<Question> questions = questionService.selectQuestion();
-        model.addAttribute("indexBars",indexBars);
-        model.addAttribute("questions",questions);
-        return "page/afterLogin";
-    }
-
 }

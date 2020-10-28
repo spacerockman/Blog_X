@@ -20,19 +20,12 @@
     <script src="<%=basePath%>/lib/bootstrap.min.js"></script>
 
     <title>首页</title>
-</head>
+<html>
 <body>
 <%--bar的上面自我简介--%>
-<div  id="topwords">
+<div>
     <h1 class="text-warning" >Joey_博客</h1>
     <h4 class="col-md-offset-2">-- 关注技术移民政策动向，探讨华人移民热点问题</h4>
-</div>
-
-<%--login_button--%>
-<div id="loginButton">
-    <form action="<%=basePath%>/index/loginPage.do" method="get">
-        <input type="submit" class="btn btn-default" value="登录">
-    </form>
 </div>
 
 <%--bar--%>
